@@ -24,7 +24,7 @@ img_v = cv2.erode(img_v, arr, iterations=1)
 cv2.imshow("bW", img_v)
 
 
-
+#it`swork`
 
 
 cv2.waitKey(0)
