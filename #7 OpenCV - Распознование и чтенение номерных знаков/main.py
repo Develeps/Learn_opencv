@@ -6,6 +6,7 @@ import imutils
 import easyocr 
 from matplotlib import pyplot as plt
 
+
 img = cv2.imread("images/2.jpg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -38,9 +39,13 @@ crop = gray[x1:x2, y1:y2]
 
 
 #ВАЖНО для этой программы требутеся CUDA а она подерживается только видеокартами NVIDIA
+#Нашол как испарвить это на AMD
+#для этого надо: pip install opencv-python==4.5.4.60
+
 text = easyocr.Reader(["en"])
 text = text.readtext(crop)
 
+print(text[0])
 
 
 plt.imshow(cv2.cvtColor(crop, cv2.COLOR_BGR2RGB))
